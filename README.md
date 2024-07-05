@@ -14,7 +14,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone this repository to your local machine:
 
     ```sh
-    git clone https://github.com/yourusername/eclipse-docker.git
+    git clone https://github.com/elyarzv/eclipse-docker.git
     cd eclipse-docker
     ```
 
@@ -102,15 +102,8 @@ The Makefile includes the following commands:
 
 - Then, re-run the `docker run` command.
 
-## Contributing
-
-If you have suggestions for improving this project, feel free to open an issue or create a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-If you have any questions or need further assistance, please contact [your-email@example.com](mailto:your-email@example.com).
+If you have any questions or need further assistance, please contact [elyar_zavvari@sfu.com](mailto:elyar_zavvari@sfu.com).
 
