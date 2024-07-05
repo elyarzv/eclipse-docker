@@ -24,7 +24,7 @@ Before you begin, ensure you have met the following requirements:
 
 To build the Docker image for Eclipse, you can use the provided Makefile:
 
-```sh
+
 make docker-build
 
 This command will create a Docker image named `eclipse-docker` with the tag `latest`.
