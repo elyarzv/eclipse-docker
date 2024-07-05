@@ -29,8 +29,8 @@ docker-run:
 	export DISPLAY="$$ipad:0"; \
 	docker run -ti --rm -e DISPLAY=$$DISPLAY \
 		--name $(CONTAINER_NAME) \
-		-v /tmp/.X11-unix:/tmp/.X11-unix -v \
-		"$$(pwd)":/home/developer/eclipse-workspace \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-v "$$(pwd)"/eclipse-workspace:/home/developer/eclipse-workspace:rw \
 		$(IMAGE_NAME) /usr/local/bin/eclipse -data /home/developer/eclipse-workspace
 
 # Clean up dangling images
