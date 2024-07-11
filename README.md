@@ -94,3 +94,7 @@ BOOST_DEBUG_POSTFIX=
 BOOST_LIB=/usr/lib/x86_64-linux-gnu
 
 /etc/environment
+
+/etc/group
+
+
