@@ -27,8 +27,7 @@ Before you begin, ensure you have met the following requirements:
     make docker-run
     ```
 - ### Windows
-1. Clone the repository zip file and extract it.
-    [Dowanload Link](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip)
+1. Clone the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
 2. Make sure the docker is running.
 3. Run the `run-docker.exe` file in the [`Windows`](https://github.com/elyarzv/eclipse-docker/tree/main/windows) folder.
 - ### macOS
