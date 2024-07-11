@@ -86,3 +86,10 @@ New apt packages should be added to `packages.txt` file. Any changes could be ma
 
 If you have any questions or need further assistance, please contact [elyar_zavvari@sfu.com](mailto:elyar_zavvari@sfu.com).
 
+VAriables to be aded:
+
+BOOST_INCLUDE=/usr/include
+BOOST_POSTFIX=
+BOOST_DEBUG_POSTFIX=
+BOOST_LIB=/usr/lib/x86_64-linux-gnu
+
