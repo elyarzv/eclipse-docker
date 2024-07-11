@@ -8,91 +8,71 @@ Before you begin, ensure you have met the following requirements:
 
 - You have installed [Docker](https://docs.docker.com/get-docker/) on your machine.
 - You have an internet connection to pull the Docker image and download dependencies.
+- If you are using Windows or macOS make sure you have an X server installed (e.g., XQuartz on macOS, VcXsrv on Windows).
 
-## Setup
+## Running Eclipse Docker Container
 
-1. Clone this repository to your local machine:
-
+- ### Ubuntu
+1. Clone the repository:
     ```sh
     git clone https://github.com/elyarzv/eclipse-docker.git
     cd eclipse-docker
     ```
-
-2. Ensure the Dockerfile, Makefile, and other necessary files (like `packages.txt` if you are installing additional packages) are in the cloned directory.
-
-## Building the Docker Image
-
-To build the Docker image for Eclipse, you can use the provided Makefile:
-
-
-make docker-build
-
-This command will create a Docker image named `eclipse-docker` with the tag `latest`.
-
-## Running the Docker Container
-
-To run the Docker container with Eclipse, follow these steps:
-
-1. **Create and run a new Docker container using the Makefile:**
-
+2. Login to Docker:
+    ```sh
+    make docker-login
+    ```
+3. Run the container:
     ```sh
     make docker-run
     ```
-
-    This command will:
-    - Create a container named `eclipse-container`.
-    - Set up the necessary environment variables and volume mounts to enable GUI applications.
-
-2. Once the container is running, Eclipse should start, and you can use it as you normally would on your host machine.
-
-## Makefile Commands
-
-The Makefile includes the following commands:
-
-- **Build the Docker image:**
-
+- ### Windows
+1. Clone the repository zip file and extract it.
+    [Dowanload Link](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip)
+2. Make sure the docker is running.
+3. Run the `run-docker.exe` file.
+- ### macOS
+    to be completed
+## Development in Ubuntu
+Clone the repository to your local machine:
+```sh
+git clone https://github.com/elyarzv/eclipse-docker.git
+cd eclipse-docker
+```
+New apt packages should be added to `packages.txt` file. Any changes could be made to `dockerfile` and following make commands could be used to:
+- Login to docker:
+    ```sh
+    make docker-login
+    ```
+- Pull the image from docker hub:
+    ```sh
+    make doker-pull
+    ```
+- Build the image
     ```sh
     make docker-build
     ```
-
-- **Run the Docker container:**
-
+- Push the docker image to the docker hub:
+    ```sh
+    make docker-push
+    ```
+- Run the docker container:
     ```sh
     make docker-run
     ```
-
-- **Stop the Docker container:**
-
-    ```sh
-    make docker-stop
-    ```
-
-- **Remove the Docker container:**
-
-    ```sh
-    make docker-remove
-    ```
-
-- **Clean up dangling Docker images:**
-
+- Clean up dangling docker images:
     ```sh
     make docker-clean
     ```
 
-- **Clean up all unused Docker images:**
-
-    ```sh
-    make docker-clean-all
-    ```
-
 ## Troubleshooting
 
-### Error: `cannot connect to X server`
+##### Error: `cannot connect to X server`
 
 - Ensure you have X11 forwarding enabled on your host machine.
 - If you are using Windows or macOS, make sure you have an X server installed (e.g., XQuartz on macOS, Xming on Windows).
 
-### Error: `docker: Error response from daemon: Conflict. The container name "/eclipse-container" is already in use.`
+##### Error: `docker: Error response from daemon: Conflict. The container name "/eclipse-container" is already in use.`
 
 - If the container name is already in use, you can remove the existing container with:
 
