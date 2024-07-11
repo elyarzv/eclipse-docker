@@ -21,6 +21,9 @@ docker-build:
 docker-push:
 	docker push $(IMAGE_NAME)
 
+docker-pull: docker-login
+	docker pull $(IMAGE_NAME)
+
 # Run Docker container
 docker-run:
 	@echo "Running Docker container..."
