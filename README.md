@@ -30,7 +30,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository zip file and extract it.
     [Dowanload Link](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip)
 2. Make sure the docker is running.
-3. Run the `run-docker.exe` file.
+3. Run the `run-docker.exe` file in the `Windows` folder.
 - ### macOS
     to be completed
 ## Development in Ubuntu
