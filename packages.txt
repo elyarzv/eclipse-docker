@@ -50,7 +50,6 @@ libpython3-dev
 libstdc++-12-doc
 libstdc++6-12-dbg
 make
-mousepad
 net-tools
 open-vm-tools-desktop
 oprofile
