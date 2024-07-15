@@ -16,7 +16,7 @@ $folderPath = "U:\eclipse-workspace"
 # Define paths
 $userName = $env:USERNAME
 $sourcePath = "U:\eclipse-workspace"
-$destinationPath = "C:\Users\$userName\Desktop\eclipse-workspace"
+$destinationPath = "C:\Users\$userName\Desktop\temp-eclipse-workspace"
 
 # Step 1: Create U:/eclipse-workspace and C:\Users\$userName\Desktop\eclipse-workspace if it doesn't exist
 if (-Not (Test-Path -Path "U:\eclipse-workspace")) {
@@ -26,18 +26,18 @@ if (-Not (Test-Path -Path "U:\eclipse-workspace")) {
     Write-Output "Folder already exists: U:\eclipse-workspace"
 }
 
-if (-Not (Test-Path -Path "C:\Users\$userName\Desktop\eclipse-workspace")) {
-    New-Item -Path "C:\Users\$userName\Desktop\eclipse-workspace" -ItemType Directory
+if (-Not (Test-Path -Path "C:\Users\$userName\Desktop\temp-eclipse-workspace")) {
+    New-Item -Path "C:\Users\$userName\Desktop\temp-eclipse-workspace" -ItemType Directory
     Write-Output "Created folder: $sourcePath"
 } else {
-    Write-Output "Folder already exists: C:\Users\$userName\Desktop\eclipse-workspace"
+    Write-Output "Folder already exists: C:\Users\$userName\Desktop\temp-eclipse-workspace"
 }
 
 # Step 2: Delete C:/Users/$username/Desktop/eclipse-workspace\*
-Remove-Item -Path "C:\Users\$userName\Desktop\eclipse-workspace\*" -Recurse -Force
+Remove-Item -Path "C:\Users\$userName\Desktop\temp-eclipse-workspace\*" -Recurse -Force
 
 # Step 3: Copy contents from U:/eclipse-workspace to C:/Users/$username/Desktop/eclipse-workspace
-Copy-Item -Path "U:eclipse-workspace\*" -Destination "C:\Users\$userName\Desktop\eclipse-workspace\" -Recurse
+Copy-Item -Path "U:eclipse-workspace\*" -Destination "C:\Users\$userName\Desktop\temp-eclipse-workspace\" -Recurse
 Write-Output "Copied contents from $sourcePath to $destinationPath"
 
 # Run the Docker command
@@ -49,8 +49,8 @@ Remove-Item -Path "U:\eclipse-workspace\*" -Recurse -Force
 Write-Output "Deleted folder: $sourcePath"
 
 # Step 6: Copy contents from C:/Users/$username/Desktop/eclipse-workspace back to U:/eclipse-workspace
-Copy-Item -Path "C:\Users\$userName\Desktop\eclipse-workspace\*" -Destination "U:\eclipse-workspace\" -Recurse
+Copy-Item -Path "C:\Users\$userName\Desktop\temp-eclipse-workspace\*" -Destination "U:\eclipse-workspace\" -Recurse
 Write-Output "Copied contents back from $destinationPath to $sourcePath"
 
 # Step 7: Delete Delete C:/Users/$username/Desktop/eclipse-workspace\
-Remove-Item -Path "C:\Users\$userName\Desktop\eclipse-workspace" -Recurse -Force
+Remove-Item -Path "C:\Users\$userName\Desktop\temp-eclipse-workspace" -Recurse -Force
