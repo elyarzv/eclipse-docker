@@ -25,7 +25,7 @@ docker-pull: docker-login
 	docker pull $(IMAGE_NAME)
 
 # Run Docker container
-docker-run:
+docker-run: docker-login
 	@echo "Running Docker container..."
 	ipad=$$(ip addr show en0 | grep "inet\b" | awk '{print $$2}' | cut -d/ -f1)
 	xhost + "$$ipad"; \

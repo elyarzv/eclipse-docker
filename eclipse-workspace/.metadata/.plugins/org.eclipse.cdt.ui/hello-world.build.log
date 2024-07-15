@@ -1,6 +1,0 @@
-22:10:15 **** Incremental Build of configuration Debug for project hello-world ****
-make all 
-make: Nothing to be done for 'all'.
-
-22:10:15 Build Finished. 0 errors, 0 warnings. (took 117ms)
-
