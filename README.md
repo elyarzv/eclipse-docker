@@ -81,6 +81,8 @@ New apt packages should be added to `packages.txt` file. Any changes could be ma
     make docker-clean
     ```
 
+---
+
 ## Troubleshooting
 
 ##### Any Error related to the `X server` or `Display`
