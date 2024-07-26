@@ -9,7 +9,7 @@ Before you begin, ensure you have met the following requirements:
 - You have installed [Docker](https://docs.docker.com/get-docker/) on your machine.
 - You have an internet connection to pull the Docker image and download dependencies.
 - If you are using Windows or macOS make sure you have an X server installed (e.g., XQuartz on macOS, VcXsrv on Windows).
-
+---
 ## Running Eclipse Docker Container
 
 - ### Ubuntu
@@ -26,12 +26,29 @@ Before you begin, ensure you have met the following requirements:
     ```sh
     make docker-run
     ```
+    
+
 - ### Windows
 1. Clone the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
-2. Make sure the docker is running.
-3. Run the `run-docker.exe` file in the [`Windows`](https://github.com/elyarzv/eclipse-docker/tree/main/windows) folder.
-- ### macOS
-    to be completed
+2. Ensure the Docker is running.
+3. Ensure X Server is running.
+4. Run the `run-docker.exe` file in the [`Windows`](https://github.com/elyarzv/eclipse-docker/tree/main/windows) folder.
+    * The `EclipseDocker.exe` file can be copied anywhere on your hard drive
+    * Running `EclipseDocker.exe` file will create an `eclipse-workspace` folder in the directory where `EclipseDocker.exe` file is placed.
+    * The created `ecipse-workspace` is a shared folder between your machine and the Docker container. 
+    * The location of the `eclipse-workspace` folder in the Docker container will be `/home/developer/eclipse-workspace`.
+
+- ### MacOS
+1. Clone the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
+2. Ensure the Docker is running.
+3. Ensure X Server is running.
+4. Run the `EclipseDocker.command` file in the [`Windows`](https://github.com/elyarzv/eclipse-docker/tree/main/windows) folder.
+    * The `EclipseDocker.command` file can be copied anywhere on your hard drive
+    * Running `EclipseDocker.command` file will create an `eclipse-workspace` folder in the directory where `EclipseDocker.command` file is placed.
+    * The created `ecipse-workspace` is a shared folder between your machine and the Docker container. 
+    * The location of the `eclipse-workspace` folder in the Docker container will be `/home/developer/eclipse-workspace`.
+
+---
 ## Development in Ubuntu
 Clone the repository to your local machine:
 ```sh
@@ -39,37 +56,37 @@ git clone https://github.com/elyarzv/eclipse-docker.git
 cd eclipse-docker
 ```
 New apt packages should be added to `packages.txt` file. Any changes could be made to `dockerfile` and following make commands could be used to:
-- Login to docker:
+- Login to Docker:
     ```sh
     make docker-login
     ```
-- Pull the image from docker hub:
+- Pull the image from Docker Hub:
     ```sh
-    make doker-pull
+    make docker-pull
     ```
 - Build the image
     ```sh
     make docker-build
     ```
-- Push the docker image to the docker hub:
+- Push the Docker image to the Docker Hub:
     ```sh
     make docker-push
     ```
-- Run the docker container:
+- Run the Docker container:
     ```sh
     make docker-run
     ```
-- Clean up dangling docker images:
+- Clean up dangling Docker images:
     ```sh
     make docker-clean
     ```
 
 ## Troubleshooting
 
-##### Error: `cannot connect to X server`
+##### Any Error related to the `X server` or `Display`
 
-- Ensure you have X11 forwarding enabled on your host machine.
 - If you are using Windows or macOS, make sure you have an X server installed (e.g., XQuartz on macOS, Xming on Windows).
+- If the X Server is installed and running, but still getting error related to display, in X Server privacy settings enable allowing connects from network clients.
 
 ##### Error: `docker: Error response from daemon: Conflict. The container name "/eclipse-container" is already in use.`
 
@@ -79,22 +96,9 @@ New apt packages should be added to `packages.txt` file. Any changes could be ma
     docker rm -f eclipse-container
     ```
 
-- Then, re-run the `docker run` command.
+- Then, re-run the docker run command or, on Windows and macOS, run the EclipseDocker.exe or EclipseDocker.command files again.
 
 
 ## Contact
 
 If you have any questions or need further assistance, please contact [elyar_zavvari@sfu.com](mailto:elyar_zavvari@sfu.com).
-
-VAriables to be aded:
-
-BOOST_INCLUDE=/usr/include
-BOOST_POSTFIX=
-BOOST_DEBUG_POSTFIX=
-BOOST_LIB=/usr/lib/x86_64-linux-gnu
-
-/etc/environment
-
-/etc/group
-
-
