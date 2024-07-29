@@ -29,7 +29,7 @@ Before you begin, ensure you have met the following requirements:
     
 
 - ### Windows
-1. Clone the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
+1. Download the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
 2. Ensure the Docker is running.
 3. Ensure X Server is running.
 4. Run the `run-docker.exe` file in the [`Windows`](https://github.com/elyarzv/eclipse-docker/tree/main/windows) folder.
@@ -39,7 +39,7 @@ Before you begin, ensure you have met the following requirements:
     * The location of the `eclipse-workspace` folder in the Docker container will be `/home/developer/eclipse-workspace`.
 
 - ### MacOS
-1. Clone the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
+1. Download the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
 2. Ensure the Docker is running.
 3. Ensure X Server is running.
 4. Run the `EclipseDocker.command` file in the [`Mac`](https://github.com/elyarzv/eclipse-docker/tree/main/Mac) folder.
