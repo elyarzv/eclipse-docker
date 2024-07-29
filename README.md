@@ -42,7 +42,7 @@ Before you begin, ensure you have met the following requirements:
 1. Download the [repository zip file](https://github.com/elyarzv/eclipse-docker/archive/refs/heads/main.zip) and extract it.
 2. Ensure the Docker is running.
 3. Ensure X Server is running.
-4. Run the `EclipseDocker.command` file in the [`Mac`](https://github.com/elyarzv/eclipse-docker/tree/main/Mac) folder.
+4. Run the `EclipseDocker.command` file in the [`Mac`](https://github.com/elyarzv/eclipse-docker/tree/main/Mac) folder which is in the extracted zipped file.
     * The `EclipseDocker.command` file can be copied anywhere on your hard drive
     * Running `EclipseDocker.command` file will create an `eclipse-workspace` folder in the directory where `EclipseDocker.command` file is placed.
     * The created `ecipse-workspace` is a shared folder between your machine and the Docker container. 
